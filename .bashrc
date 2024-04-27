@@ -57,9 +57,9 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-	PS1='\n[$(date +%H:%M:%S)] ${debian_chroot:+($debian_chroot)}\[\033[01;30m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\nᛊ '
+	PS1='\n[$(date +%H:%M:%S)] ${debian_chroot:+($debian_chroot)}\[\033[01;30m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] $(git rev-parse --abbrev-ref HEAD 2>/dev/null)\nᛊ '
 else
-    PS1='\n[$(date +%H:%M:%S)] ${debian_chroot:+($debian_chroot)}\u@\h:\w\nᛊ '
+    PS1='\n[$(date +%H:%M:%S)] ${debian_chroot:+($debian_chroot)}\u@\h:\w $(git rev-parse --abbrev-ref HEAD 2>/dev/null)\nᛊ '
 fi
 unset color_prompt force_color_prompt
 
