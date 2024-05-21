@@ -114,11 +114,16 @@ alias ipwsl='wsl.exe hostname -I'
 
 alias jsonpp='python -m json.tool'
 
+alias run='./run.sh'
+alias setup='./setup.sh'
+
 alias gl="git --no-pager log --pretty='format:%C(bold black)[%ad] %C(auto)%h %C(cyan)%an %C(reset)%s' -n25; pln"
 alias gd='git --no-pager diff'
 alias gdc='git --no-pager diff --cached'
 alias gdf='git diff --name-status'
+alias gdh='git --no-pager diff HEAD~1'
 alias gst='git status'
+alias grh='git reset --hard'
 alias gcm='git add -u; git commit -m'
 alias gca='git add -u; git commit --amend --no-edit'
 alias gau='git add -u; git status'
@@ -152,6 +157,8 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+cd /mnt/c/Users/User/Documents
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -168,9 +175,6 @@ export GOPATH=$HOME/projects/go
 export GOBIN=$GOPATH/bin
 export PATH=$GOROOT/bin:$PATH
 export PATH=$HOME/projects/go/bin:$PATH
-
-cd /mnt/c/Users/User/Documents/ᛊ
-
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
